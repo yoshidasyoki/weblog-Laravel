@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +6,38 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+  --color-page: #f4f4f4;
+  --color-darkgray-300: #a9a9a9;
+  --color-darkgray-500: #949393;
+  --color-darkgray-700: #494949;
+  --color-article-header: #005f7a;
+}
+
+
+.nav-btn {
+  @apply text-white font-bold bg-darkgray-300 px-4 py-1.5 rounded-md hover:bg-darkgray-500 cursor-pointer transition-all duration-300
+}
+
+.card {
+  @apply bg-white flex flex-col rounded-lg border border-gray-200 shadow-md
+}
+
+.message {
+  animation: fadeout 3s forwards;
+  @apply absolute top-15 border border-green-400 rounded bg-green-100 w-65 h-15 flex items-center justify-center
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

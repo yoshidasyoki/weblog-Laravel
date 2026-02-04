@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #f4f4f4;
+}
+
+header {
+  background: #4ad1ef;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+  background: #8c8c8c;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+main .message {
+  position: fixed;
+  top: 38px;
+  right: 50%;
+  transform: translateX(50%);
+  background: #bfffd0;
+  color: #006714;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeout 3s forwards;
+}
+main a {
+  text-decoration: none;
+  color: inherit;
+}
+main a .article {
+  background: white;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+main a .article h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+main a .article .meta {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background: #f4f4f4;
+}
+
+.container {
+  max-width: 400px;
+  margin: 4rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(146, 146, 146, 0.15);
+  border: 2px solid #e2e2e2;
+}
+
+.message {
+  position: fixed;
+  top: 38px;
+  right: 50%;
+  transform: translateX(50%);
+  background: #bfffd0;
+  color: #006714;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeout 3s forwards;
+}
+
+h1 {
+  text-align: center;
+  color: #0099FF;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  background: #FFDFDF;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  border: 1px solid #FFBABA;
+  color: #C40000;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+  color: #005A91;
+}
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #B7E5FF;
+  background: #F7FCFF;
+  margin-top: 0.3rem;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: #4DB8FF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(77, 184, 255, 0.4);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0099FF;
+}
+
+.register-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #005A91;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
