@@ -13,9 +13,13 @@
   --color-article-header: #005f7a;
 }
 
-
 .nav-btn {
   @apply text-white font-bold bg-darkgray-300 px-4 py-1.5 rounded-md hover:bg-darkgray-500 cursor-pointer transition-all duration-300
+}
+
+.nav-link {
+    @apply h-full flex items-center px-5 text-gray-800 cursor-pointer
+           border-white;
 }
 
 .card {

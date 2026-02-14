@@ -21,6 +21,6 @@ class RegisterController extends Controller
 
         $user = new User();
         $user->fill($form)->save();
-        return to_route('home')->with('success', 'アカウント登録が完了しました');
+        return to_route('login')->with('success', 'アカウント登録が完了しました');
     }
 }

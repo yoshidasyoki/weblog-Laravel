@@ -2,33 +2,20 @@
 @section('title', 'weblog')
 
 @section('content')
-    <header class="bg-cyan-400 px-28 py-5 flex flex-wrap justify-between">
-        <div>
-            <h1 class="text-white font-bold text-3xl">投稿ページ</h1>
-        </div>
-        <nav class="flex items-center space-x-1.5">
-            <a href="" class="nav-btn flex items-center gap-2">
-                <i class="fa-solid fa-trash-arrow-up"></i>
-                ゴミ箱
-            </a>
-            <a href="{{ route('home') }}" class="nav-btn">TOPへ</a>
-            <a href="{{ route('logout') }}" class="nav-btn">ログアウト</a>
-        </nav>
-    </header>
+    <x-header title="編集ページ">
+    </x-header>
 
     <main>
         <div class="flex flex-col items-center w-full">
-            @if (session()->has('success'))
-                <div class="message">
-                    <i class="fa-solid fa-check text-green-600 pr-6"></i>
-                    <p class="text-green-900 text-lg">{{ session()->get('success') }}</p>
-                </div>
-            @endif
+            <x-message></x-message>
 
             <div class="w-full px-60 pt-12">
-                <h2 class="font-bold pb-4 text-2xl">記事一覧</h2>
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="font-bold text-2xl">記事一覧</h2>
+                    <x-sort-form :sort="$sort"></x-sort-form>
+                </div>
 
-                @if (empty($articles))
+                @if ($articles->count() === 0)
                     <p class="text-lg">投稿記事がまだありません。</p>
                 @endif
 
@@ -59,7 +46,7 @@
                                 <form action="{{ route('articles.destroy', ['article' => $article->id]) }}", method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit">
+                                    <button type="submit" class="hover:cursor-pointer">
                                         <i class="fa-regular fa-trash-can"></i>
                                     </button>
                                 </form>
@@ -67,6 +54,10 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+
+            <div class="my-7">
+                {{ $articles->onEachSide(1)->links() }}
             </div>
         </div>
     </main>

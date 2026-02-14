@@ -3,26 +3,12 @@
 @section('title', '記事の新規投稿')
 
 @section('content')
-    <header class="bg-cyan-400 px-28 py-5 flex flex-wrap justify-between">
-        <div>
-            <h1 class="text-white font-bold text-3xl">投稿ページ</h1>
-        </div>
-        <nav class="flex items-center space-x-1.5">
-            <a href="{{ route('home') }}" class="nav-btn">TOPへ</a>
-            {{-- パスの修正必要 --}}
-            <a href="{{ route('register') }}" class="nav-btn">編集する</a>
-            <a href="{{ route('logout') }}" class="nav-btn">ログアウト</a>
-        </nav>
-    </header>
+    <x-header title="投稿ページ">
+    </x-header>
 
     <main>
         <div class="flex justify-center">
-            @if (session()->has('success'))
-                <div class="message">
-                    <i class="fa-solid fa-check text-green-600 pr-6"></i>
-                    <p class="text-green-900 text-lg">{{ session()->get('success') }}</p>
-                </div>
-            @endif
+            <x-message></x-message>
 
             <div class="w-150 my-14 text-md">
                 <form action="{{ route('articles.store') }}" method="post">
@@ -70,9 +56,13 @@
 
                         </div>
 
-                        <button
-                            class="mx-auto block bg-sky-400 hover:bg-sky-500 w-80 py-2 text-white font-bold rounded-md cursor-pointer my-5"
-                            type="submit">投稿する</button>
+                        <div class="flex justify-center">
+                            <button
+                                class="block mx-auto bg-sky-400 hover:bg-sky-500 w-80 py-2 text-white font-bold rounded-md cursor-pointer my-5"
+                                type="submit">
+                                投稿する
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>

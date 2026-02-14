@@ -4,8 +4,10 @@
 
 @section('content')
     <div class="flex justify-center items-center h-screen">
+        <x-message></x-message>
         <div class="card justify-center items-center space-y-2 h-130 w-120">
             <h1 class="text-sky-400 font-bold text-3xl">ログイン</h1>
+
 
             <div class="w-80 scpace-y-3">
                 @if ($errors->any())
@@ -37,9 +39,12 @@
                         @endif
                     </div>
 
-                    <button
-                        class="mx-auto block bg-sky-400 hover:bg-sky-500 w-full py-2 text-white font-bold rounded-md cursor-pointer my-5"
-                        type="submit">ログイン</button>
+                    <div class="mt-5 mb-2">
+                        <button
+                            class="mx-auto block bg-sky-400 hover:bg-sky-500 w-full py-2 text-white font-bold rounded-md cursor-pointer my-5"
+                            type="submit">ログイン
+                        </button>
+                    </div>
                 </form>
 
                 <div class="flex justify-between items-center text-sm text-sky-700">

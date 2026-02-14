@@ -12,7 +12,7 @@
                     <div
                         class="mx-auto my-4 w-full rounded-md border border-red-300 bg-red-50 px-4 py-2 text-center text-sm text-red-700">
                         <p class="font-bold">登録に失敗しました</p>
-                        <p class="text-sm"></p>入力内容をご確認ください</p>
+                        <p class="text-sm">入力内容をご確認ください</p>
                     </div>
                 @endif
 
@@ -51,21 +51,22 @@
                             </p>
                         @endif
                     </div>
-
-                    <button
-                        class="mx-auto block bg-sky-400 hover:bg-sky-500 w-full py-2 text-white font-bold rounded-md cursor-pointer my-5"
-                        type="submit">新規登録</button>
-
-                    <div class="flex justify-between items-center text-sm text-sky-700">
-                        <a href="{{ route('home') }}" class="flex items-center gap-1 hover:underline transition">
-                            ← Topへ戻る
-                        </a>
-
-                        <a href="{{ route('login') }}" class="font-semibold hover:underline transition">
-                            ログインはこちら
-                        </a>
+                    <div class="mt-5 mb-2">
+                        <button
+                            class="mx-auto block bg-sky-400 hover:bg-sky-500 w-full py-2 text-white font-bold rounded-md cursor-pointer"
+                            type="submit">新規登録
+                        </button>
                     </div>
                 </form>
+                <div class="flex justify-between items-center text-sm text-sky-700">
+                    <a href="{{ route('home') }}" class="flex items-center gap-1 hover:underline transition">
+                        ← Topへ戻る
+                    </a>
+
+                    <a href="{{ route('login') }}" class="font-semibold hover:underline transition">
+                        ログインはこちら
+                    </a>
+            </div>
             </div>
         </div>
     </div>
