@@ -5,7 +5,10 @@ Laravelの勉強用に作成したブログアプリです。
 認証機能とCRUD操作を実装し、Featureテストで簡単な動作確認を行いました。  
 前回作成したフルスクラッチでのブログアプリ開発と比較を行うことでLaravelの内部動作をイメージしながら学習を進め、フレームワークをブラックボックス化しないよう意識しました。
 
-※ 以下の記事で詳細を記述しています。  
+フルスクラッチでの開発はこちら  
+https://github.com/yoshidasyoki/weblog
+
+また、以下の記事で今回作成したLaravel版weblogアプリの詳細を記述しています。  
 https://qiita.com/yoshikingcorporation/items/19cf201c34c5223802e6
 
 ## 使用技術
