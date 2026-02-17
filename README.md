@@ -1,59 +1,41 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# weblogアプリ（Laravel版）
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 概要
+Laravelの勉強用に作成したブログアプリです。  
+認証機能とCRUD操作を実装し、Featureテストで簡単な動作確認も行いました。  
+前回作成したフルスクラッチでのブログアプリ開発と比較を行うことでLaravelの内部動作をイメージしながら学習を進め、フレームワークをブラックボックス化しないよう意識しました。
 
-## About Laravel
+## 使用技術
+- PHP 8.4
+- Laravel 12.x
+- MySQL 8.0
+- Tailwind CSS v4.1
+- Docker
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 機能一覧
+- ユーザーアカウントの作成 / ログイン機能
+- 記事の投稿 / 編集 / 削除
+- バリデーション
+- ゴミ箱機能（論理削除）
+- 投稿者本人以外の操作制限（アクセス権管理）
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ER図
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<div align="center">
+    <img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/84ba333e-4350-45ae-9ac6-b16cbbf0163a" />
+</div>
 
-## Learning Laravel
+ユーザーの登録情報を管理する`Users`テーブルと投稿記事を管理する`Articles`テーブルは `user_id` を外部キーとしてリレーションを持たせています。  
+今回は実装していないのでほとんど関係ありませんが、ユーザーアカウント削除時に投稿記事も一緒に削除されるように外部キー制約は`CASCADE`としています。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 工夫したポイント
+- `middleware`による認証処理の実装
+- `Policy`による認可処理で投稿者本人以外の記事の投稿/編集/削除を制限
+- `Eagerローディング`を用いてN+1問題を回避することでパフォーマンスを向上
+- `Featureテスト`を実施し認証・認可とCRUD操作の動作家宇人実施
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 今後に向けて
+より実務に必要なスキルを身に着けるため、以下の点を今後学習していきたいです。
+- トランザクションの実装
+- クラウド（AWS）を用いたデプロイ
+- API化
